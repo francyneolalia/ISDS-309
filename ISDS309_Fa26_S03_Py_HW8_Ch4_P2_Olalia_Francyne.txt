@@ -1,0 +1,311 @@
+Francyne Olalia
+ISDS 309 - 03 (Fall 2026)
+10/23/2026
+Assignment 8 / Ch 4 P2 / pp: 4.34- 1, 2, 5, 7, 8, 17, 18
+
+======================================================================
+
+Programming Project Exercises:
+
+-----------------------------------------
+
+PP_4)
+Programming Project 4:
+-----------------------------------------
+
+PP_4.34.1)
+Programming Project 4.34.1: •.
+Write programs with loops that compute
+
+1. The sum of all even numbers between 2 and 100 (inclusive).
+
+total = 0
+for i in range(2, 101, 2):
+	total = total + i
+print("Sum of even numbers:", total)
+
+2. The sum of all squares between 1 and 100 (inclusive).
+
+total = 0
+for i in range(1, 101):
+	total = total + (i * i)
+print("Sum of squares:", total)
+
+3. All powers of 2 from 20 up to 220.
+
+for i in range(21):
+	power = 2**i
+	print(power)
+
+4. The sum of all odd numbers between a and b (inclusive), where a and b are inputs.
+
+total = 0
+a = int(input("Enter starting integer a: "))
+b = int(input("Enter ending integer b: ))
+
+for i in range(a, b + 1):
+	if i % 2 != 0:
+		total += i
+
+print("The sum of", a, "to", b, "is", total)
+
+5. The sum of all odd digits of an input. (For example, if the input is 32677, the sum would be 3 + 7 + 7 = 17.)
+
+total = 0
+n = int(input("Enter an integer: "))
+
+for char in n:
+	digit = int(char)
+	if digit % 2 != 0:
+		total += digit
+
+print("Sum of odd digits:", total)
+
+-----------------------------------------
+
+PP_4.34.2)
+Programming Project 4.34.2: ••.
+Write programs that read a sequence of integer inputs and print
+
+1. The smallest and largest of the inputs.
+
+print("Enter integers one by one. Type 'done' when you are finished.")
+
+inputs = input("Enter a number (or 'done'): ")
+
+count = 0
+
+while inputs != "done":
+	num = int(inputs)
+	count += 1
+	
+	if count == 1:
+		smallest = num
+		largest = num
+	else:
+		if num < smallest:
+			smallest = num
+		if num > largest:
+			largest = num
+
+	inputs = input("Enter a number or 'done': ")
+
+if count > 0:
+	print("Smallest number:", smallest)
+	print("Largest number:", largest)
+else:
+	print("No number were entered.")
+
+2. The number of even and odd inputs.
+
+print("Enter integers one by one. Type 'done' when you are finished.")
+
+inputs = input("Enter a number (or 'done'): ")
+
+count = 0
+even = 0
+odd = 0
+
+while inputs != "done":
+	num = int(inputs)
+	count += 1
+
+	if num % 2 == 0:
+		even += 1
+	else:
+		odd += 1
+	inputs = input("Enter a number or 'done': ")
+
+if count > 0:
+	print("Number of even inputs:", even)
+	print("Number of odd inputs:", odd)
+else:
+	print("No numbers were entered.")
+
+3. Cumulative totals. For example, if the input is 1 7 2 9, the program should print 1 8 10 19.
+
+print("Enter integers one by one. Type 'done' when you are finished.")
+
+inputs = input("Enter a number (or 'done'): ")
+
+total = 0
+
+print("Cumulative totals: ", end=" ")
+
+while inputs != "done":
+	num = int(inputs)
+	total += num
+	print(total, end=" ")
+	
+	inputs = input("\n Enter a number or 'done': ")
+
+4. All adjacent duplicates. For example, if the input is 1 3 3 4 5 5 6 6 6 2, the program should print 3 5 6.
+
+print("Enter integers one by one. Type 'done' when you are finished.")
+
+inputs = input("Enter a number (or 'done'): ")
+
+current_num = None
+prev_num = None
+answer = """
+last_print = None
+
+while inputs != "done":
+	current_num = int(inputs)
+	if current_num == prev_num:
+		if current_num != last_print:
+			answer += str(current_num)
+			last_print = current_num
+	prev_num = current_num
+	inputs = input("Enter a number (or 'done'): ")
+
+print("Adjacent duplicates:", answer)
+-----------------------------------------
+
+PP_4.34.5)
+Programming Project 4.34.5: ••.
+Write a program that reads a set of floating-point values. Ask the user to enter the values, then print
+
+the average of the values.
+the smallest of the values.
+the largest of the values.
+the range, that is the difference between the smallest and largest.
+
+print("Enter decimal numbers one by one. Type 'done' when you are finished.")
+
+inputs = input("Enter a value or 'done': ")
+
+count = 0
+total = 0
+smallest = None
+largest = None
+
+while inputs != "done":
+	num = float(inputs)
+	total += num
+	count += 1
+	
+	if count == 1:
+		smallest = num
+		largest = num
+	else:
+		if num < smallest:
+			smallest = num
+		if num > largest:
+			largest = num
+	inputs = input("Enter a value or 'done': ")
+
+if count > 0:
+	average = total/count
+	range = largest - smallest
+
+print("----------RESULTS----------")
+print("Average:", average)
+print("Smallest:", smallest)
+print("Largest:", largest)
+print("Range:", range)
+-----------------------------------------
+PP_4.34.7)
+Programming Project 4.34.7: •••.
+Translate the following pseudocode for randomly permuting the characters in a string into a Python program.
+
+Read a word.
+Repeat len(word) times
+   Pick a random position i in the word, but not the last position.
+   Pick a random position j > i in the word.
+   Swap the letters at positions j and i.
+Print the word.
+To swap the letters, construct substrings as follows:
+
+.png
+
+Then replace the string with
+
+first + word[j] + middle + word[i] + last
+
+
+from random import randint
+
+word = input('Enter a word: ')
+
+for w in range(len(word)):
+	i = randint(0, len(word) - 2)
+	j = randint(i + 1, len(word) - 1)
+	new_word = ''
+	k = 0
+	
+	while k < len(word):
+		if k == i:
+			new_word = new_word + word[j]
+		elif k == j:
+			new_word = new_word + word[i]
+		else:
+			new_word = new_word + word[k]
+	        k = k + 1
+        
+	word = new_word
+
+print('Shuffled word:', word)
+-----------------------------------------
+
+PP_4.34.8)
+Programming Project 4.34.8: •.
+Write a program that reads a word and prints each character of the word on a separate line. For example, if the user provides the input "Harry", the program prints
+
+H
+a
+r
+r
+y
+
+word = input("Enter a word: ")
+
+for char in word:
+	print(char)
+-----------------------------------------
+PP_4.34.17)
+Programming Project 4.34.17: •••.
+Prime numbers. Write a program that prompts the user for an integer and then prints out all prime numbers up to that integer. For example, when the user enters 20, the program should print
+
+2
+3
+5
+7
+11
+13
+17
+19
+Recall that a number is a prime number if it is not divisible by any number except 1 and itself.
+
+limit = int(input("Enter an integer: "))
+num = 2
+
+while num <= limit:
+	prime = True
+	divisor = 2
+
+	while divisor < num:
+		if num % divisor == 0:
+			prime = False
+		divisor += 1
+	if prime:
+		print(num)
+	num = num + 1
+-----------------------------------------
+PP_4.34.18)
+Programming Project 4.34.18: •.
+Write a program that prints a multiplication table, like this:
+
+    1   2   3   4   5   6   7   8   9  10
+    2   4   6   8  10  12  14  16  18  20
+    3   6   9  12  15  18  21  24  27  30
+    . . .
+   10  20  30  40  50  60  70  80  90 100
+
+for i in range(1, 11):
+	for j in range(1, 11):
+		print(i*j, end="\t")
+print()
+-----------------------------------------
+
+-----------------------------------------

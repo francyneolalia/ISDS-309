@@ -1,0 +1,250 @@
+Francyne Olalia
+ISDS 309 - 03 (Fall 2026)
+10/09/2026
+Assignment 6 / Ch 3, P2 / PP: 3.35- 2, 3, 7, 12, 14, 15, 20
+======================================================================
+
+Review Exercises:
+
+-----------------------------------------
+
+PP_3.35.2)
+Programming Project 3.35.2: ••.
+Write a program that reads a floating-point number and prints “zero” if the number is zero. Otherwise, print “positive” or “negative”. Add “small” if the absolute value of the number is less than 1, or “large” if it exceeds 1,000,000.
+
+value = float(input(:Enter a floating-point number: "))
+absoluteValue = abs(value)
+
+if value == 0:
+	print("zero")
+elif (value > 0) and (absoluteValue < 1):
+	print("small positive")
+elif (value > 0) and (absoluteValue > 1):
+	print("large positive")
+elif (value < 0) and (absoluteValue < 1):
+	print("small negative")
+elif (value < 0) and (absoluteValue > 1):
+	print("large negative")
+else:
+	print("negative")
+-----------------------------------------
+
+PP_3.35.3)
+Programming Project 3.35.3: ••.
+Write a program that reads an integer and prints how many digits the number has, by checking whether the number is ≥ 10, ≥ 100, and so on. (Assume that all integers are less than ten billion.) If the number is negative, first multiply it by –1.
+
+num = int(input("Enter an integer: "))
+
+if num < 0:
+	num = num * -1
+
+if num >= 10,000,000,000:
+	digits = 11
+elif num >= 1,000,000,000:
+	digits = 10
+elif num >= 100000000:
+	digits = 9
+elif num >= 100000000:
+	digits = 8
+elif num >= 1000000:
+	digits = 7
+elif num >= 100000:
+	digits = 6
+elif num >= 10000:
+	digits = 5
+elif num >= 1000:
+	digits = 4
+elif num >= 100:
+	digits = 3
+elif num >= 10:
+	digits = 2
+else:
+	digits = 1
+
+print("The number has", digits, "digits")
+-----------------------------------------
+
+PP_3.35.7)
+Programming Project 3.35.7: ••.
+Write a program that reads in three integers and prints “in order” if they are sorted in ascending or descending order, or “not in order” otherwise. For example,
+
+   1 2 5   in order
+   1 5 2   not in order
+   5 2 1   in order
+   1 2 2   in order
+
+a = int(input("Enter the first integer: "))
+b = int(input("Enter the second integer:  "))
+c = int(input("Enter the third integer: "))
+
+if (a <= b <= c) or (a >= b >= c):
+	print("in order")
+else:
+	print("not in order")
+-----------------------------------------
+
+PP_3.35.12)
+Programming Project 3.35.12: ••.
+Write a program that translates a letter grade into a number grade. Letter grades are A, B, C, D, and F, possibly followed by + or –. Their numeric values are 4, 3, 2, 1, and 0. There is no F+ or F–. A + increases the numeric value by 0.3, a – decreases it by 0.3. However, an A+ has value 4.0.
+
+Enter a letter grade: B- 
+The numeric value is 2.7.
+
+grade = input("Enter a letter grade: ")
+value = 0
+
+grade = input("Enter a letter grade: ")
+value = 0.0
+
+if "A" in grade or "a" in grade:
+    value = 4.0
+elif "B" in grade or "b" in grade:
+    value = 3.0
+elif "C" in grade or "c" in grade:
+    value = 2.0
+elif "D" in grade or "d" in grade:
+    value = 1.0
+
+if grade != "F" and grade != "f":
+    if "+" in grade:
+        value += 0.3
+    elif "-" in grade:
+        value -= 0.3
+
+if value > 4.0:
+    value = 4.0
+
+print("The numeric value is", value, ".")
+-----------------------------------------
+PP_3.35.14)
+Programming Project 3.35.14: ••.
+Write a program that takes user input describing a playing card in the following shorthand notation:
+
+A          Ace
+2 ... 10   Card values 
+J          Jack 
+Q          Queen 
+K          King 
+D          Diamonds 
+H          Hearts 
+S          Spades 
+C          Clubs
+Your program should print the full description of the card. For example,
+
+Enter the card notation: QS 
+Queen of Spades
+
+card = input("Enter the card notation: ")
+
+if "A" in card or "a" in card:
+	rank = "Ace"
+elif "2" in card:
+	rank = 2
+elif "3" in card:
+	rank = 3
+elif "4" in card:
+	rank = 4
+elif "5" in card:
+	rank = 5
+elif "6" in card:
+	rank = 6
+elif "7" in card:
+	rank = 7
+elif "8" in card:
+	rank = 8
+elif "9" in card:
+	rank = 9
+elif "10" in card:
+	rank = "10"
+elif "J" in card or "j" in card:
+	rank = "Jack"
+elif "Q" in card or "q" in card:
+	rank = "Queen"
+elif "K" in card or "k" in card:
+	rank = "King"
+else:
+	rank = "Unknown rank"
+
+if "D" in card or "d" in card:
+	suit = "Diamonds"
+elif "H" in card or "h" in card:
+	suit = "Hearts"
+elif "S" in card or "s" in card:
+	suit = "Spades"
+elif "C" in card or "c" in card:
+	suit = "Clubs"
+else:
+	suit = "Unknown suit"
+
+print(rank, "of", suit)
+ -----------------------------------------
+
+PP_3.35.15)
+Programming Project 3.35.15: ••.
+Write a program that reads in three floating-point numbers and prints the largest of the three inputs without using the max function. For example:
+
+Enter a number: 4
+Enter a number: 9
+Enter a number: 2.5
+The largest number is 9.0
+
+a = float(input("Enter a number: "))
+b = float(input("Enter a number: "))
+c = float(input("Enter a number: "))
+
+largest = a
+
+if b > largest:
+	largest = b
+elif c > largest:
+	largest = c
+else:
+	largest = a
+
+print("The largest number is", largest)
+-----------------------------------------
+
+PP_3.35.20)
+Programming Project 3.35.20: ••.
+The following algorithm yields the season (Spring, Summer, Fall, or Winter) for a given month and day.
+
+.png
+If month is 1, 2, or 3, season = "Winter" 
+Else if month is 4, 5, or 6, season = "Spring"
+Else if month is 7, 8, or 9, season = "Summer"
+Else if month is 10, 11, or 12, season = "Fall"
+If month is divisible by 3 and day >= 21
+   If season is "Winter", season = "Spring" 
+   Else if season is "Spring", season = "Summer" 
+   Else if season is "Summer", season = "Fall" 
+   Else season = "Winter" 
+Write a program that prompts the user for a month and day and then prints the season, as determined by this algorithm.
+
+month = int(input("Enter month: "))
+day = int(input("Enter day: "))
+
+if month == 1 or month == 2 or month == 3:
+	season = "Winter"
+elif month == 4 or month == 5 or month == 6:
+	season = "Spring"
+elif month == 7 or month == 8 or month == 9:
+	season = "Summer"
+else:
+	season = "Fall"
+
+if month %3 == 0 and day >= 21:
+	if season == "Winter":
+		season = "Spring"
+	elif season == "Spring"
+		season = "Summer"
+	elif season == "Summer"
+		season = "Fall"
+	else:
+		season = "Winter"
+
+print(season) 
+-----------------------------------------
+
+ 
+
+ 

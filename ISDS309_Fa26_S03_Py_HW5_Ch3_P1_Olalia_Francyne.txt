@@ -1,0 +1,231 @@
+Francyne Olalia
+ISDS 351 - 03 (Spring 26)
+(Tue))
+10/06/2026
+Assignment 5 / Chapter 3 / RX: 3.34- 1, 3, 4, 6, 8, 17
+
+======================================================================
+RX_3.34.1)
+Review Exercise 3.34.1: •.
+What is the value of each variable after the if statement?
+
+1. n = 1
+   k = 2
+   r = n # r becomes 1
+   if k < n : # 2 < 1 is false
+   	r = k
+
+n = 1, k = 2, r = 1
+
+2. n = 1
+   k = 2
+   if n < k : # 1 < 2 is true
+   	r = k # r becomes 2
+   else :
+   	r = k + n
+
+n = 1, k = 2, r = 2
+
+3. n = 1
+   k = 2 
+   r = k # r becomes 2
+   if r < k : # 2 < 2 is false
+   	n = r
+   else :
+   	k = n # k becomes 1
+
+n = 1, k = 1, r = 2
+
+4. n = 1
+   k = 2
+   r = 3
+   if r < n + k : # 3 < (1 + 2) is false
+   	r = 2 * n
+   else :
+   	k = 2 * r # k becomes 2(3) = 6
+
+n = 1, k = 6, r = 3
+-----------------------------------------
+
+RX_3.34.3)
+Review Exercise 3.34.3: ••.
+Find the errors in the following if statements.
+
+1. if x > 0 then
+   	print(x)
+
+Errors: 
+	a. If then is not a correct command. Remove "then".
+	b. A colon is required at the end of the if header.
+
+Correct:
+	if x > 0 :
+		print(x)
+
+2. if 1 + x > x ** sqrt(2) :
+   	y = y + x
+
+Errors:
+	a. Missing parenthesis around equations for better clarity.
+	b. The sqrt function is not defined. Import math.
+
+Correct:
+	import math
+	
+	if (1 + x) > (x ** math.sqrt(2)) :
+		y = (y + x)
+
+3. if x = 1 :
+   	y += 1
+
+Errors:
+	a. "=" is an assignment operator while "==" is the relational operator.
+
+Correct:
+	if x == 1 :
+		y += 1
+
+4. xStr = input("Enter an integer value")
+   x = int(xStr)
+   if xStr.isdigit() :
+   	sum = sum + x
+   else :
+   	print("Bad input for x")
+
+Errors:
+	a. "x = int(xStr)" is executed before checking if xStr.isdigit() is true.
+
+Correct: 
+	xStr = input("Enter an integer value")
+	if xStr.isdigit() :
+		x = int(xStr)
+		sum = sum + x
+	else :
+		print("Bad input for x")
+
+5. letterGrade = "F"
+   if grade >= 90 :
+   	letterGrade = "A"
+   if grade >= 80 :
+   	letterGrade = "B"
+   if grade >= 70 :
+   	letterGrade = "C"
+   if grade >= 60 :
+   	letterGrade = "D"
+
+Errors:
+	a. Using sequential independent if statements will cause every statement to execute in order.
+
+Correct:
+	letterGrade = "F"
+	if grade >= 90 :
+   		letterGrade = "A"
+   	elif grade >= 80 :
+   		letterGrade = "B"
+   	elif grade >= 70 :
+   		letterGrade = "C"
+   	elif grade >= 60 :
+   		letterGrade = "D"
+
+-----------------------------------------
+
+RX_3.34.4)
+Review Exercise 3.34.4: •.
+What do these code fragments print?
+
+1. n = 1
+   m = −1
+   if n < −m : # 1 < -(-1) or 1 < 1 is False
+   	print(n)
+   else :
+   	print(m) # m = -1
+
+-1
+
+2. n = 1
+   m = −1
+   if −n >= m : # -1 >= -1 is True
+   	print(n) # n = 1
+   else :
+   	print(m)
+
+1
+
+3. x = 0.0
+   y = 1.0
+   if abs(x − y) < 1 : # abs(0 - 1) < 1 is 1 < 1 is False
+   	print(x)
+   else :
+   	print(y) # y = 1.0
+
+1.0
+
+4. x = sqrt(2.0)
+   y = 2.0
+   if x * x == y : # (sqrt(2.0) * sqrt(2.0)) == 2.0 is false
+   	print(x)
+   else :
+   	print(y) # y = 2.0
+
+2.0
+-----------------------------------------
+RX_3.34.6)
+Review Exercise 3.34.6: ••.
+Suppose x and y are variables, each of which contains a number. Write a code fragment that sets y to the absolute value of x without calling the abs function. Use an if statement.
+
+if x < 0:
+	y = -x
+else:
+	y = x
+ -----------------------------------------
+
+RX_3.34.8)
+Review Exercise 3.34.8: •.
+It is easy to confuse the = and == operators. Write a test program containing the statement
+
+	if floor = 13 
+
+Answer:
+	floor = 13
+	if floor = 13:
+		print("Thirteenth floor")
+
+What error message do you get? Write another test program containing the statement
+
+	count == 0
+
+Answer:
+	SyntaxError: invalid syntax
+	
+	floor = 13
+	if floor == 13:
+		print("Thirteenth floor")
+
+What happens when you run the program?
+
+Answer: 
+	No error message occurs. The program's output is "Thirteenth floor".
+ -----------------------------------------
+
+RX_3.34.17)
+Review Exercise 3.34.17: ••.
+Write pseudocode for a program that prompts the user for a month and day and prints out whether it is one of the following four holidays:
+
+	New Year’s Day (January 1)
+	Independence Day (July 4)
+	Veterans Day (November 11)
+	Christmas Day (December 25)
+
+month = input("Enter month: ")
+day = input("Enter day: ")
+
+if ((month == "January") or (month == "1")) and ((day == "one") or (day == "1")) :
+	print("New Year's Day")
+elif ((month == "July") or (month == "7")) and ((day == "four") or (day == "4")) :
+	print("Independence Day")
+elif ((month == "November") or (month == "11")) and ((day == "eleven") or (day == "11")) :
+	print("Veterans Day")
+elif ((month == "December") or (month == "12")) and ((day == "twenty five") or (day == "25")) :
+	print("Christmas Day")
+
+-----------------------------------------
