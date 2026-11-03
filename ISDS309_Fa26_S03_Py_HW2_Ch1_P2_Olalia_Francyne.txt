@@ -1,0 +1,83 @@
+Francyne Olalia
+ISDS 351 - 03 (Spring 26)
+(Tue))
+09/03/2026
+Assignment 2 / Chapter 1 / (PP): 1.22- 1, 2, 4, 5, 12, 15
+
+===========================================
+
+Programming Projects:
+
+===========================================
+PP_1.22.1)
+	Programming Project 1.22.1: •.
+		Write a program that prints a greeting of your choice, perhaps in a language other than English.
+
+	print("Mabuhay at magandang umaga po!")
+===========================================
+PP_1.22.2) 
+	Programming Project 1.22.2: ••.
+		Write a program that prints the sum of the first ten positive integers, 1 + 2 + ⋯ + 10.
+
+	sum = 0
+
+	for number in (1,10):
+    		sum = sum + number
+
+	print(sum)
+===========================================
+PP_1.22.4)
+	Programming Project 1.22.4: ••.
+		Write a program that prints the balance of an account after the first, second, and third year. The account has an initial balance of $1,000 and earns 5 percent interest per year.
+
+	balance = 1000
+	year = 0
+
+	while year < 3:
+		balance = (balance * 0.05) + balance
+		year = year + 1
+	print(balance)
+===========================================
+PP_1.22.5) 
+	Programming Project 1.22.5: •.
+		Write a program that displays your name inside a box on the screen, like this:
+
+			.png
+
+		Do your best to approximate lines with characters such as | - +.
+
+	print("+--------+")
+	print("|Francyne|")
+	print("+--------+")
+===========================================
+PP_1.22.12)
+	Programming Project 1.22.12: •.
+		Write a program that prints a poem of your choice. If you don’t have a favorite poem, use a favorite song lyric.
+
+	print("I spent all my serotonin on you")
+===========================================
+PP_1.22.15) 
+	Programming Project 1.22.15: •••.
+		In the United States, there is no federal sales tax, so every state may impose its own sales taxes. Look on the Internet for the sales tax charged in five U.S. states, then write a program that prints the tax rate for five states of your choice.
+
+		Sales Tax Rates
+		-----------
+		Alaska: 0%
+		Hawaii: 4%
+		. . .
+
+		alaska = 0
+		print(alaska, "%")
+
+		hawaii = 4
+		print(hawaii, "%")		
+
+		california = 6
+		print(california, "%")		
+
+		florida = 6
+		print(florida, "%")		
+
+		maine = 5.5
+		print(maine, "%")		
+===========================================

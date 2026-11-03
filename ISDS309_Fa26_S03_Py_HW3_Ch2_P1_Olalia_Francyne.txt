@@ -1,0 +1,145 @@
+Francyne Olalia
+ISDS 351 - 03 (Spring 26)
+(Tue))
+09/24/2026
+Assignment 3  Chapter 2/ (RX): 2.26- 1, 5, 6, 7, 12, 14
+
+===========================================
+
+Review Exercises:
+
+-----------------------------------------
+
+RX_2.26.1)
+Review Exercise 2.26.1: •.
+What is the value of mystery after this sequence of statements?
+
+mystery = 1
+mystery = 1 - 2 * mystery
+mystery = mystery + 1
+
+The value of mystery is 0.
+-----------------------------------------
+
+RX_2.26.5)
+Review Exercise 2.26.5: ••.
+What are the values of the following expressions? In each line, assume that
+
+x = 2.5
+y = -1.5
+m = 18
+n = 4
+
+1.x + n * y - (x + n) * y
+2.m // n + m % n
+3.5 * x - n / 5
+4.1 - (1 - (1 - (1 - (1 - n))))
+5.sqrt(sqrt(n))
+
+1. x + n * y - (x + n) * y 
+	=2.5 + 4(-1.5) - (2.5 + 4)(-1.5) 
+	=6.25
+2. m // n + m % n 
+	=18 // 4 + 18 % 4 = 4 + 2 
+	=6
+3. 5 * x - n / 5 
+	=12.5 - 0.8
+	=11.7
+4. 1 - (1 - (1 - (1 - (1 - n)))) 
+	=3
+5. sqrt(sqrt(n)) 
+	=sqrt(sqrt(4)) 
+	=sqrt(2) 
+	=1.4
+-----------------------------------------
+
+RX_2.26.6:)
+Review Exercise 2.26.6: •.
+What are the values of the following expressions, assuming that n is 17 and m is 18?
+
+1. n // 10 + n % 10
+2. n % 2 + m % 2
+3. (m + n) // 2
+4. (m + n) / 2.0
+5. int(0.5 * (m + n))
+6. int(round(0.5 * (m + n)))
+
+1. n // 10 + n % 10 
+	= 17 // 10 + 17 % 10
+	= 1 + 7
+	= 8
+2. n % 2 + m % 2
+	= 17 % 2 + 18 % 2
+	= 1 + 0
+	= 1
+3. (m + n) // 2
+	= 35 // 2
+	= 17
+4. (m + n) / 2.0
+	= 35 / 2.0
+	= 17.5
+5. int(0.5 * (m + n))
+	= int(17.5)
+	= 17
+6. int(round(0.5 * (m + n)))
+	= int(round(17.5))
+	= 18
+-----------------------------------------
+
+RX_2.26.7)
+Review Exercise 2.26.7: ••.
+What are the values of the following expressions? In each line, assume that
+
+s = "Hello"
+t = "World"
+
+1. len(s) + len(t)
+2. s[1] + s[2]
+3. s[len(s) // 2]
+4. s + t
+5. t + s
+6. s * 2
+
+1. len(s) + len(t)
+	= 5 + 5
+	= 10
+2. s[1] + s[2]
+	= "e" + "1"
+	= "el"
+3. s[len(s) // 2]
+	= s[5 // 2]
+	= s[2]
+	= "l"
+4. s + t
+	= "HelloWorld"
+5. t + s
+	= "WorldHello"
+6. s * 2
+	= "HelloHello"
+ -----------------------------------------
+
+RX_2.26.12)
+Review Exercise 2.26.12: •.
+Explain what each of the following program segments computes.
+
+x = 2
+y = x + x
+s = "2"
+t = s + s
+
+x = 2
+y = 4
+s = "2"
+t = "22"
+ -----------------------------------------
+
+RX_2.26.14)
+Review Exercise 2.26.14: ••.
+Write pseudocode for a program that prompts the user to enter a name (such as Harold James Morgan) and then prints a monogram consisting of the initial letters of the first, middle, and last name (such as HJM).
+
+firstInitial = first character of first name
+middleInitial = first character of middle name
+lastInitial = first character of last name
+
+Print firstInitial + middleInitial + lastInitial
+-----------------------------------------

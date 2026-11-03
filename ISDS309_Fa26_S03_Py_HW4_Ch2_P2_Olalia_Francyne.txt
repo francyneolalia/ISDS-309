@@ -1,0 +1,148 @@
+Francyne Olalia
+ISDS 309 - 03 (Fall 2026)
+9/5/2026
+Assignment 4 / Ch 2, P12 / RX: 7, 8, 9, 12, 14, 15
+
+======================================================================
+
+Programming Exercises:
+
+-----------------------------------------
+
+PP_2.27.1)
+Programming Project 2.27.1: •.
+Write a program that displays the dimensions of a letter-size (8.5 × 11 inch) sheet of paper in millimeters. There are 25.4 millimeters per inch. Use constants and comments in your program.
+
+INCH_TO_MM = 25.4
+WIDTH_INCHES = 8.5
+HEIGHT_INCHES = 11
+
+width_mm = WIDTH_INCHES * INCH_TO_MM
+height_mm = HEIGHT_INCHES * INCH_TO_MM
+
+print("Width:", width_mm, "mm")
+print("Height:", height_mm, "mm")
+
+Output:
+Width: 215.9 mm
+Height: 279.4 mm
+-----------------------------------------
+
+PP_2.27.4)
+Programming Project 2.27.4: ••.
+Write a program that prompts the user for two integers and then prints
+
+The sum
+The difference
+The product
+The average
+The distance (absolute value of the difference)
+The maximum (the larger of the two)
+The minimum (the smaller of the two)
+Hint: Python defines max and min functions that accept a sequence of values, each separated with a comma.
+
+a = int(input("Enter the first integer: "))
+b = int(input("Enter the second integer:))
+
+print("Sum:", a + b)
+print("Difference:", a -- b)
+print("Product:", a * b)
+print("Average:", (a + b) / 2)
+print("Distance:", abs(a - b))
+print("Maximum:", max(a, b))
+print("Minimum:", min(a, b))
+-----------------------------------------
+
+PP_2.27.8)
+Programming Project 2.27.8: ••.
+Write a program that asks the user for the lengths of the sides of a rectangle. Then print
+
+The area and perimeter of the rectangle
+The length of the diagonal
+
+import math
+
+length = float(input("Enter the length: "))
+width = float(input("Enter the width: "))
+
+area = length * width
+perimeter = 2 * (length + width)
+diagonal = math.sqrt(length * length + width * width)
+
+print("Area:", area)
+print("Perimeter:", perimeter)
+print("Diagonal:", diagonal)
+-----------------------------------------
+
+PP_2.27.11)
+Programming Project 2.27.11: ••.
+Write a program that asks the user to input
+
+The number of gallons of gas in the tank
+The fuel efficiency in miles per gallon
+The price of gas per gallon
+Then print the cost per 100 miles and how far the car can go with the gas in the tank.
+
+gallons = float(input("Enter gallons of gas: "))
+mpg = float(input("Enter miles per gallon: "))
+price = float(input("Enter price per gallon: "))
+
+cost = 100 / mpg * price
+distance = gallons * mpg
+
+print("Cost per 100 miles:", cost)
+print("Distance:", distance)
+-----------------------------------------
+
+PP_2.27.12)
+Programming Project 2.27.12: •.
+File names and extensions. Write a program that prompts the user for the drive letter (C), the path (\Windows\System), the file name (Readme), and the extension (txt). Then print the complete file name C:\Windows\System\Readme.txt. (If you use UNIX or a Macintosh, skip the drive name and use / instead of \ to separate directories.)
+
+drive = input("Enter drive letter: ")
+path = input("Enter path: ")
+name = input("Enter file name: ")
+extension = input("Enter extension: ")
+
+print(drive + ":" + path + "\\" + name + "." + extension)
+ -----------------------------------------
+
+PP_2.27.16)
+Programming Project 2.27.16: ••.
+Write a program that reads a five-digit positive integer and breaks it into a sequence of individual digits. For example, the input 16384 is displayed as
+
+1 6 3 8 4
+
+number = int(input("Enter a five-digit number: "))
+
+a = number // 10000
+b = number // 1000 % 10
+c = number // 100 % 10
+d = number // 10 % 10
+e = number % 10
+
+print(a, b, c, d, e)
+ -----------------------------------------
+
+PP_2.27.20)
+Programming Project 2.27.20: ••.
+Write a program that prints a Christmas tree:
+
+   /\
+  /  \
+ /    \
+/      \
+--------
+  "  "
+  "  "
+  "  "
+Remember to use escape sequences.
+
+print("   /\")
+print("  /  \")
+print(" /    \")
+print("/      \")
+print("--------")
+print('  "  "')
+print('  "  "')
+print('  "  "')
+-----------------------------------------
